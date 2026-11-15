@@ -1,0 +1,18 @@
+{
+  "name": "번개알바 — 하남 미사 3km 10분 알바",
+  "short_name": "번개알바",
+  "description": "하남 미사 3km 상권 · 10분 번개 알바 · 0원 땡처리 · 사장님 전용 B2B 도매관",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A1128",
+  "theme_color": "#0A1128",
+  "lang": "ko",
+  "dir": "ltr",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
