@@ -1160,7 +1160,7 @@
             <div class="halo"></div>
             <div class="body"><svg viewBox="0 0 100 100"><path d="M56 8 28 56h18l-6 36 30-50H52z"/></svg></div>
           </div>
-          <div class="me-tag"><i class="d"></i>역전할맥 · 내 매장</div>
+          <div class="me-tag"><i class="d"></i>미사 호프 3번가 · 내 매장</div>
           <div class="zoomtag">
             <button onclick="zoomMap(1)" aria-label="확대">＋</button>
             <button onclick="zoomMap(-1)" aria-label="축소">－</button>
@@ -1202,7 +1202,7 @@
           <div style="display:flex;justify-content:space-between;font-size:10px;color:#94A3B8;margin-top:4px">
             <span>출발: 미사누리공원</span>
             <span style="color:#5BE9A6;font-weight:800">🚶 320m 도보 이동 중</span>
-            <span style="color:#FFA24D;font-weight:800">도착: 내 매장 (역전할맥)</span>
+            <span style="color:#FFA24D;font-weight:800">도착: 내 매장 (미사 호프 3번가)</span>
           </div>
           <button onclick="openLiveTrackingModal()" style="width:100%;margin-top:9px;padding:8px 0;background:rgba(255,133,0,0.18);border:1px solid rgba(255,133,0,0.4);border-radius:9px;color:#FFA24D;font-size:11.5px;font-weight:900;display:flex;align-items:center;justify-content:center;gap:4px;cursor:pointer">
             <span>🗺️ 실시간 알바 이동 관제 지도 전체보기</span> <span>›</span>
@@ -1942,7 +1942,7 @@
           <div class="av">태</div>
           <div>
             <div class="nm">미사 상권 사장님 <span class="badge b-amb">사장님</span></div>
-            <div class="mt">하남 미사동 · 역전할맥</div>
+            <div class="mt">하남 미사동 · 미사 호프 3번가</div>
           </div>
         </div>
         <div class="mini">
@@ -2930,7 +2930,7 @@
     var nm = $("#rgName").value.trim() || "새 땡처리 상품";
     var pr = parseInt(($("#rgPrice").value||"0").replace(/[^0-9]/g,""),10) || 20000;
     var id = "d"+(DEALS.length+1);
-    DEALS.unshift({id:id,name:nm,from:pr,emoji:"🔥",shop:"내 가게 · 역전할맥",left:1800});
+    DEALS.unshift({id:id,name:nm,from:pr,emoji:"🔥",shop:"내 가게 · 미사 호프 3번가",left:1800});
     renderDeals();
     $("#pushLog").textContent = "방금 · 미사동 3km · 32명 발송 · 열람 0명";
     closeAll();
@@ -3300,7 +3300,7 @@
   var TICKER_ITEMS = [
     "방금 전 | [미사 숙성삼겹] 2시간 홀서빙 1초 매칭 완료 (35,640원)",
     "2분 전 | [호텔 더블랙] 야간 린넨·객실 정비 4시간 호출 수락 (56,280원)",
-    "4분 전 | [역전할맥 미사점] 주방 마감설거지 2시간 전자근로계약 체결",
+    "4분 전 | [미사 호프 3번가] 주방 마감설거지 2시간 전자근로계약 체결",
     "6분 전 | [하남 풍산 고깃집] 불금 알바생 1초 매칭 완료",
     "9분 전 | [미사 수변 펍] 주말 바텐더 보조 긴급 매칭 성사"
   ];
@@ -4154,7 +4154,7 @@ window.openContractSample = function(){
 
       <!-- 내 매장 도착지 핀 -->
       <div style="position:absolute;left:75%;top:75%;transform:translate(-50%,-50%);text-align:center">
-        <div style="background:#FF8500;color:#FFF;font-size:10px;font-weight:900;padding:2px 6px;border-radius:5px;margin-bottom:3px;white-space:nowrap">⚡ 내 매장 (역전할맥)</div>
+        <div style="background:#FF8500;color:#FFF;font-size:10px;font-weight:900;padding:2px 6px;border-radius:5px;margin-bottom:3px;white-space:nowrap">⚡ 내 매장 (미사 호프 3번가)</div>
         <div style="width:14px;height:14px;background:#5BE9A6;border:2px solid #FFF;border-radius:50%;margin:0 auto;box-shadow:0 0 10px #5BE9A6"></div>
       </div>
     </div>
