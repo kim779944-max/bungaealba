@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0A1128">
 <meta name="robots" content="index,follow">
-<meta name="author" content="번개알바 · 골목상권살리기 지원센터">
+<meta name="author" content="번개알바 · 소상공인 지원팀 번개알바">
 <meta name="keywords" content="번개알바, 하남 미사 알바, 10분 알바, 단기알바, 땡처리, 사장님 홈페이지 무료, 식자재 도매, HACCP 직배송, 모텔 비품 도매">
 <meta name="naver-site-verification" content="NAVER_SEARCHADVISOR_VERIFICATION_CODE">
 <meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE">
@@ -832,6 +832,145 @@
   background: #38BDF8;
 }
 
+
+  /* ===== 시안 이식: 상단 3자리 회전 + 가게 홈피 + 가격표 + 방문 카운터 ===== */
+  .adstrip{margin:10px 14px 4px;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.12))}
+  .adsh{display:flex;align-items:center;justify-content:space-between;padding:9px 12px 7px}
+  .adsh .t{font-size:11.5px;font-weight:800;color:var(--ink2)}
+  .adsh .t em{font-style:normal;font-size:9.5px;font-weight:700;color:var(--gray);
+    border:1px solid var(--line2);border-radius:5px;padding:1px 5px;margin-left:6px}
+  .adsh .dots{display:flex;gap:4px;align-items:center}
+  .adsh .dots i{width:5px;height:5px;border-radius:50%;background:#2A3A60;transition:background .3s,box-shadow .3s}
+  .adsh .dots i.on{background:var(--amber);box-shadow:0 0 6px rgba(255,107,0,.8)}
+  .advp{overflow:hidden;padding:0 12px 12px}
+  .adtrack{display:flex;gap:8px;transition:transform .62s cubic-bezier(.4,.05,.2,1);will-change:transform}
+  .adcell{flex:0 0 auto;width:calc((100% - 16px)/3);border-radius:12px;overflow:hidden;position:relative;
+    background:var(--card);border:1px solid var(--line);box-shadow:0 6px 16px rgba(0,0,0,.3)}
+  .adcell img{width:100%;height:62px;object-fit:cover;display:block}
+  .adcell .nm{font-size:10.5px;font-weight:800;color:#fff;padding:5px 6px 0;letter-spacing:-.4px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .adcell .mt{font-size:9px;color:var(--gray);padding:0 6px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .adcell .seat{position:absolute;top:5px;left:5px;font-size:8.5px;font-weight:800;color:#0B1428;
+    background:rgba(255,107,0,.94);border-radius:4px;padding:1px 4px}
+  .adcell .ov2{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,13,34,0) 30%,rgba(7,13,34,.9) 100%)}
+  .adcell.hot{border-color:var(--amber-line)}
+
+  .sp-top{display:flex;align-items:center;justify-content:space-between;padding:10px 14px 2px}
+  .sp-back{font-size:12px;font-weight:800;color:#DCE6F2;border:1px solid var(--line2);
+    background:rgba(255,255,255,.04);border-radius:9px;padding:6px 10px}
+  .sp-badge{font-size:10px;font-weight:800;color:#FFB27A;background:var(--amber-soft);
+    border:1px solid var(--amber-line);border-radius:999px;padding:3px 9px}
+  .sp-hero{position:relative;margin:8px 14px 0;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+  .sp-hero img{width:100%;height:220px;object-fit:cover;display:block}
+  .sp-hero .ov{position:absolute;inset:auto 0 0 0;padding:42px 15px 13px;
+    background:linear-gradient(180deg,rgba(6,11,28,0),rgba(6,11,28,.56) 44%,rgba(6,11,28,.95) 100%)}
+  .sp-badges{display:flex;gap:5px;margin-bottom:6px}
+  .sp-badges span{font-size:10px;font-weight:800;padding:2px 7px;border-radius:999px;
+    background:rgba(46,212,122,.14);color:#79E8AE;border:1px solid rgba(46,212,122,.34)}
+  .sp-badges span.o{background:var(--amber-soft);color:#FFB27A;border-color:var(--amber-line)}
+  .sp-badges span.n{background:rgba(255,255,255,.07);color:#D3DDEA;border-color:var(--line2)}
+  .sp-hero h1{font-size:24px;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.18}
+  .sp-hero p{font-size:12px;color:#C6D2E1;margin-top:4px}
+  .sp-body{padding:12px 14px 96px}
+  .sp-sec{margin-top:15px}
+  .sp-sech{display:flex;align-items:baseline;justify-content:space-between;padding:0 3px 7px}
+  .sp-sech h2{font-size:15px;font-weight:900;color:#fff}
+  .sp-sech span{font-size:10.5px;color:var(--gray);font-weight:700}
+  .sp-info{padding:13px}
+  .sp-irow{display:flex}
+  .sp-it{flex:1;text-align:center;position:relative;padding:2px 4px}
+  .sp-it+.sp-it::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:1px;background:var(--line)}
+  .sp-it .k{font-size:10px;color:var(--gray);font-weight:700}
+  .sp-it .v{font-size:12px;color:#fff;font-weight:800;margin-top:2px}
+  .sp-cbtn{display:flex;gap:7px;margin-top:10px}
+  .sp-cbtn a,.sp-cbtn button{flex:1;text-align:center;font-size:12.5px;font-weight:800;padding:10px 0;
+    border-radius:12px;border:1px solid var(--line2);background:rgba(255,255,255,.04);color:#E6EDF6;display:block}
+  .sp-cbtn .pri{background:linear-gradient(145deg,var(--amber2),var(--amber));color:#0B1226;
+    border-color:transparent;box-shadow:0 8px 18px rgba(255,107,0,.28)}
+  .sp-menu .r{display:flex;justify-content:space-between;gap:10px;padding:9px 0;
+    border-bottom:1px solid rgba(38,55,95,.65)}
+  .sp-menu .r:last-child{border-bottom:0}
+  .sp-menu .n{font-size:13px;font-weight:800;color:#EFF4FA}
+  .sp-menu .p{font-size:13px;font-weight:800;color:#FFB27A;white-space:nowrap}
+  .sp-dish{padding:0;overflow:hidden}
+  .sp-dish img{width:100%;height:150px;object-fit:cover;display:block}
+  .sp-dish .bd{padding:12px 13px 13px}
+  .sp-dish .tt{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .sp-dish h3{font-size:15.5px;font-weight:900;color:#fff;letter-spacing:-.5px}
+  .sp-dish .pr{font-size:14px;font-weight:900;color:#FFB27A;white-space:nowrap}
+  .sp-dish .ds{font-size:11.5px;color:var(--ink2);margin-top:4px}
+  .sp-evh{display:flex;align-items:center;justify-content:space-between;margin-top:9px;
+    border-top:1px solid var(--line);padding-top:8px}
+  .sp-evh .l{font-size:10.5px;font-weight:800;color:var(--ink2)}
+  .sp-evh .ok{font-size:9.5px;font-weight:700;color:#79E8AE;background:rgba(46,212,122,.12);
+    border:1px solid rgba(46,212,122,.3);border-radius:5px;padding:1px 6px}
+  .sp-er{display:flex;gap:9px;padding:5px 0}
+  .sp-er .k{flex:0 0 36px;font-size:10.5px;font-weight:800;color:var(--amber)}
+  .sp-er .v{font-size:11px;color:#D6E0EC}
+  .sp-gal{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .sp-gal figure{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+  .sp-gal img{width:100%;height:108px;object-fit:cover;display:block}
+  .sp-gal figcaption{position:absolute;left:0;right:0;bottom:0;font-size:10px;font-weight:700;color:#EAF0F8;
+    padding:12px 8px 6px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(6,11,28,.85))}
+  .sp-map{padding:13px 14px}
+  .sp-map .ad{font-size:12.5px;color:#E7EDF6;font-weight:700}
+  .sp-map .walk{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+  .sp-map .walk span{font-size:11px;font-weight:700;color:var(--ink2);background:rgba(255,255,255,.05);
+    border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+  .sp-hh{margin-top:11px;border-top:1px solid var(--line);padding-top:9px}
+  .sp-hh .hr{display:flex;justify-content:space-between;font-size:11.5px;padding:3.5px 0}
+  .sp-hh .hr .k{color:var(--gray);font-weight:700}
+  .sp-hh .hr .v{color:#DCE4EF;font-weight:700}
+  .sp-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:64px;width:100%;max-width:460px;z-index:58;
+    padding:8px 12px;display:flex;gap:7px;background:rgba(8,14,34,.96);border-top:1px solid var(--line);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+  .sp-bar a,.sp-bar button{flex:1;text-align:center;font-size:12px;font-weight:800;padding:10px 0;border-radius:11px;
+    border:1px solid var(--line2);background:rgba(255,255,255,.04);color:#E6EDF6;display:block}
+  .sp-bar .pri{flex:1.4;background:linear-gradient(145deg,var(--amber2),var(--amber));color:#0B1226;border-color:transparent}
+
+  /* 가격표 */
+  .pr-h{padding:16px 16px 12px}
+  .pr-h .h1{font-size:23px;font-weight:900;color:#fff;letter-spacing:-1.1px;line-height:1.24;margin-top:10px}
+  .pr-h .h1 em{font-style:normal;color:var(--amber)}
+  .pr-h .sub{font-size:12px;color:var(--ink2);margin-top:6px}
+  .pr-card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);
+    border-radius:17px;box-shadow:var(--shadow);padding:0 15px}
+  .pr-lr{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:11px 0;
+    border-bottom:1px solid rgba(38,55,95,.65)}
+  .pr-lr:last-child{border-bottom:0}
+  .pr-lr .n{font-size:12.5px;font-weight:800;color:#EFF4FA}
+  .pr-lr .d{font-size:10.5px;color:var(--gray);margin-top:3px;line-height:1.5}
+  .pr-lr .p{font-size:12.5px;font-weight:900;color:#FFB27A;white-space:nowrap;padding-top:1px}
+  .pr-lr .p.free{color:#79E8AE}
+  .pr-plan{border-radius:17px;padding:15px;border:1px solid var(--line);margin-bottom:9px;position:relative;
+    background:linear-gradient(180deg,var(--card2),var(--card));box-shadow:var(--shadow)}
+  .pr-plan.hi{border-color:var(--amber-line);box-shadow:0 12px 30px rgba(255,107,0,.15)}
+  .pr-plan .ph{display:flex;align-items:center;justify-content:space-between}
+  .pr-plan .pt{font-size:14px;font-weight:900;color:#fff}
+  .pr-plan .pp{font-size:19px;font-weight:900;color:var(--amber);white-space:nowrap}
+  .pr-plan .pp small{font-size:10.5px;color:var(--ink2);font-weight:700;margin-left:2px}
+  .pr-plan ul{list-style:none;margin-top:9px;padding-top:9px;border-top:1px solid var(--line)}
+  .pr-plan li{font-size:11.5px;color:#D8E1EE;padding:3px 0 3px 11px;position:relative}
+  .pr-plan li::before{content:"";position:absolute;left:0;top:11px;width:4px;height:4px;border-radius:50%;
+    background:var(--amber);box-shadow:0 0 5px rgba(255,107,0,.7)}
+  .pr-badge{position:absolute;top:-9px;right:14px;font-size:9.5px;font-weight:900;color:#0B1226;
+    background:linear-gradient(145deg,var(--amber2),var(--amber));border-radius:6px;padding:2px 7px;
+    box-shadow:0 4px 12px rgba(255,107,0,.35)}
+  .pr-note{font-size:10.5px;color:var(--gray);line-height:1.65;padding:10px 3px 0}
+  .pr-note b{color:#C9D5E4;font-weight:800}
+  .kts-click{display:flex;gap:8px;margin-top:11px}
+  .kts-click a,.kts-click button{flex:1;text-align:center;font-size:12.5px;font-weight:800;padding:11px 0;
+    border-radius:12px;border:1px solid var(--line2);background:rgba(255,255,255,.04);color:#E6EDF6;display:block}
+  .kts-click .pri{background:linear-gradient(145deg,var(--amber2),var(--amber));color:#0B1226;border-color:transparent;
+    box-shadow:0 8px 20px rgba(255,107,0,.26)}
+  /* 방문 카운터 */
+  .cnt-box{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
+    margin:14px 14px 6px;padding:10px 12px;border:1px solid var(--line);border-radius:13px;
+    background:rgba(255,255,255,.03)}
+  .cnt-box .lb{font-size:10.5px;font-weight:800;color:var(--ink2)}
+  .cnt-box img{height:18px;display:block;border-radius:4px}
+  .cnt-box .note{font-size:9.5px;color:var(--gray2);width:100%;text-align:center;margin-top:2px}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"번개알바",
@@ -883,6 +1022,43 @@
     <section class="view on" id="v-home">
 
       <div id="homeSection-biz">
+
+      <!-- ===== 상단 3자리 상위노출 회전 (시안 이식) ===== -->
+      <div class="adstrip" id="adstrip">
+        <div class="adsh">
+          <div class="t">번개알바 상위노출<em>광고</em></div>
+          <div class="dots" id="adstripDots"></div>
+        </div>
+        <div class="advp">
+          <div class="adtrack" id="adstripTrack">
+            <a class="adcell hot" href="#" onclick="return ktsGo('shop')">
+              <span class="seat">자리 1</span><img src="photos/bbq.webp" alt=""><div class="ov2"></div>
+              <div class="nm">미사 숯불갈비</div><div class="mt">고기·술집 · 도보 4분</div>
+            </a>
+            <a class="adcell" href="#" onclick="return ktsGo('shop')">
+              <span class="seat">자리 2</span><img src="photos/deal_jokbal.webp" alt=""><div class="ov2"></div>
+              <div class="nm">미사 홀릭 족발</div><div class="mt">족발·보쌈 · 도보 5분</div>
+            </a>
+            <a class="adcell" href="#" onclick="return ktsGo('shop')">
+              <span class="seat">자리 3</span><img src="photos/chicken_feet.webp" alt=""><div class="ov2"></div>
+              <div class="nm">미사 불타는 닭발</div><div class="mt">안주·포차 · 도보 6분</div>
+            </a>
+            <a class="adcell hot" href="#" onclick="return ktsGo('shop')">
+              <span class="seat">자리 1</span><img src="photos/bar_snack.webp" alt=""><div class="ov2"></div>
+              <div class="nm">미사 포차 3번</div><div class="mt">생맥주·안주 · 도보 3분</div>
+            </a>
+            <a class="adcell" href="#" onclick="return ktsGo('shop')">
+              <span class="seat">자리 2</span><img src="photos/tteokbokki.webp" alt=""><div class="ov2"></div>
+              <div class="nm">미사 즉석 떡볶이</div><div class="mt">분식·야식 · 도보 7분</div>
+            </a>
+            <a class="adcell" href="#" onclick="return ktsGo('shop')">
+              <span class="seat">자리 3</span><img src="photos/bhc_classic.webp" alt=""><div class="ov2"></div>
+              <div class="nm">미사 호반 치킨</div><div class="mt">치킨·호프 · 도보 5분</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div class="hero" id="hero">
         <div class="slides" id="slides"></div>
         <div class="dots" id="dots"></div>
@@ -901,6 +1077,12 @@
         <a href="https://tan-jaguar-gyg31.ship.place/" target="_blank" rel="noopener" class="btn-showcase-go">
           실물 체험 ›
         </a>
+      </div>
+
+      <!-- 시안 이식 진입 -->
+      <div class="kts-click">
+        <button class="pri" onclick="ktsGo('shop')">가게 홈피 실물 보기</button>
+        <button onclick="ktsGo('price')">가격표 보기</button>
       </div>
 
       <!-- 🎟 10% 할인권 — 사장님 전용(발행·제휴 관리) -->
@@ -1366,7 +1548,7 @@
               <span style="font-size:11px;font-weight:900;color:#5BE9A6;background:rgba(34,197,94,0.25);padding:2px 8px;border-radius:6px">출동 이동 중 · GPS 실시간 전송</span>
               <span style="font-size:12px;font-weight:900;color:#FFF" id="workerEtaText">도착 예정 3분 40초</span>
             </div>
-            <div style="font-size:14px;font-weight:900;color:#FFF;margin-top:6px" id="workerDestName">📍 BHC치킨 미사호반점 이동 중</div>
+            <div style="font-size:14px;font-weight:900;color:#FFF;margin-top:6px" id="workerDestName">📍 미사 호반 치킨 이동 중</div>
             <div style="font-size:11px;color:#94A3B8;margin-top:2px">사장님 관제 화면에 내 현재 위치가 1초 주기로 전송되고 있습니다.</div>
             <div style="display:flex;gap:6px;margin-top:8px">
               <a href="tel:010-2002-2899" class="btn btn-sm btn-amb" style="flex:1;text-align:center;text-decoration:none">📞 사장님 통화</a>
@@ -1395,7 +1577,7 @@
             <div style="display:flex;justify-content:space-between;align-items:flex-start">
               <div>
                 <span class="badge b-amb" style="font-size:10px">치킨·호프</span>
-                <div style="font-size:14px;font-weight:900;color:#FFF;margin-top:3px">BHC치킨 미사호반점</div>
+                <div style="font-size:14px;font-weight:900;color:#FFF;margin-top:3px">미사 호반 치킨</div>
                 <div style="font-size:11.5px;color:#CBD5E1;margin-top:2px">오늘 18:00 ~ 20:00 (2시간 홀서빙) · 도보 4분 (320m)</div>
               </div>
               <div style="text-align:right">
@@ -1405,7 +1587,7 @@
             </div>
             <div style="display:flex;gap:6px;margin-top:10px">
               <button onclick="openContractSample()" class="btn btn-line" style="flex:1;padding:8px;font-size:11px">📄 전자계약서</button>
-              <button onclick="acceptWorkerJob('BHC치킨 미사호반점', '2시간 홀서빙', 35640)" class="btn btn-amb" style="flex:2;padding:8px;font-size:12px;font-weight:900">⚡ 즉시 출동하기 (GPS 전송)</button>
+              <button onclick="acceptWorkerJob('미사 호반 치킨', '2시간 홀서빙', 35640)" class="btn btn-amb" style="flex:2;padding:8px;font-size:12px;font-weight:900">⚡ 즉시 출동하기 (GPS 전송)</button>
             </div>
           </div>
 
@@ -1414,7 +1596,7 @@
             <div style="display:flex;justify-content:space-between;align-items:flex-start">
               <div>
                 <span class="badge b-amb" style="font-size:10px">주점·호프</span>
-                <div style="font-size:14px;font-weight:900;color:#FFF;margin-top:3px">역전할머니맥주 하남미사점</div>
+                <div style="font-size:14px;font-weight:900;color:#FFF;margin-top:3px">미사 호프 3번가</div>
                 <div style="font-size:11.5px;color:#CBD5E1;margin-top:2px">오늘 21:00 ~ 24:00 (3시간 마감설거지) · 도보 5분 (410m)</div>
               </div>
               <div style="text-align:right">
@@ -1424,7 +1606,7 @@
             </div>
             <div style="display:flex;gap:6px;margin-top:10px">
               <button onclick="openContractSample()" class="btn btn-line" style="flex:1;padding:8px;font-size:11px">📄 전자계약서</button>
-              <button onclick="acceptWorkerJob('역전할머니맥주 하남미사점', '3시간 마감설거지', 45960)" class="btn btn-amb" style="flex:2;padding:8px;font-size:12px;font-weight:900">⚡ 즉시 출동하기 (GPS 전송)</button>
+              <button onclick="acceptWorkerJob('미사 호프 3번가', '3시간 마감설거지', 45960)" class="btn btn-amb" style="flex:2;padding:8px;font-size:12px;font-weight:900">⚡ 즉시 출동하기 (GPS 전송)</button>
             </div>
           </div>
 
@@ -1491,7 +1673,7 @@
     </section>
 
     <!-- ============ B2B 도매관 ============ -->
-    <section class="view" id="v-whole">
+    <section class="view owner-only" id="v-whole">
       <div class="ws-hero">
         <div class="ws-kicker">사장님 전용 · 업종별 B2B 도매관</div>
         <div class="ws-title">HACCP 공장 직배송<br>중간 유통마진 <b>ZERO</b></div>
@@ -1506,9 +1688,9 @@
       <div id="wsBody"></div>
       <div class="ws-foot">
         <div class="ws-foot-t"><b>사장님, 첫 주문은 반값 배송</b><span>10만 원 이상 주문 시 배송비 0원 · 새벽 4시까지 주문하면 오전 도착</span></div>
-        <button class="btn btn-amb btn-full" onclick="wsOrder()">도매가로 주문 요청</button>
+        <button class="btn btn-amb btn-full" onclick="wsOrder()">사업자 전용가로 주문 요청</button>
         <button class="btn btn-line btn-full" onclick="openSheet('sh-sms')" style="margin-top:8px">📨 문자 영업 콘솔 열기</button>
-        <div class="sub" style="text-align:center;margin-top:10px;line-height:1.6">사업자등록증 확인 후 도매가가 열립니다 · 부가세 별도 표기</div>
+        <div class="sub" style="text-align:center;margin-top:10px;line-height:1.6">사업자등록증 확인 후 사업자 전용가가 열립니다 · 부가세 별도 표기</div>
       </div>
     </section>
 
@@ -1529,7 +1711,7 @@
           <span class="hot">1초 컷 임박</span>
           <span class="badge b-red">긴급 땜빵</span>
         </div>
-        <h3>역전할머니맥주 하남미사점</h3>
+        <h3>미사 호프 3번가</h3>
         <div class="ln"><span>오늘 19:00 ~ 21:00 (2시간)</span><b>도보 8분</b></div>
         <div class="ln"><span>홀서빙 · 빈 테이블 정리</span><b>35,640원</b></div>
         <div class="ln"><span>첫 1시간 시급</span><b style="color:#FF8090">20,320원</b></div>
@@ -1566,12 +1748,200 @@
     </section>
 
     <!-- ============ ME ============ -->
+    <!-- ===== 가게 홈피 (손님화면 시안 이식) ===== -->
+    <section class="view" id="v-shop">
+      <div class="sp-top">
+        <button class="sp-back" onclick="ktsGo('home')">← 홈</button>
+        <span class="sp-badge">사장님 단독 홈페이지 · 예시</span>
+      </div>
+
+      <div class="adstrip" id="adstrip2">
+        <div class="adsh">
+          <div class="t">번개알바 상위노출<em>광고</em></div>
+          <div class="dots" id="adstripDots2"></div>
+        </div>
+        <div class="advp">
+          <div class="adtrack" id="adstripTrack2"></div>
+        </div>
+      </div>
+
+      <div class="sp-hero">
+        <img src="photos/bbq.webp" alt="숯불에 굽는 생삼겹살">
+        <div class="ov">
+          <div class="sp-badges"><span>영업중</span><span class="o">도보 3분</span><span class="n">주차 6대</span></div>
+          <h1>미사 숙성삼겹 명가</h1>
+          <p>7일 저온 숙성 생삼겹살, 숯불에 바로 굽는 집</p>
+        </div>
+      </div>
+
+      <div class="sp-body">
+        <div class="card sp-info">
+          <div class="sp-irow">
+            <div class="sp-it"><div class="k">영업시간</div><div class="v">11:30–23:00</div></div>
+            <div class="sp-it"><div class="k">브레이크</div><div class="v">15:00–17:00</div></div>
+            <div class="sp-it"><div class="k">라스트오더</div><div class="v">22:00</div></div>
+          </div>
+          <div class="sp-cbtn">
+            <a class="pri" href="tel:01020022899">전화 걸기</a>
+            <a href="#sp-map">길찾기</a>
+            <a href="#sp-menu">메뉴 보기</a>
+          </div>
+        </div>
+
+        <div class="sp-sec" id="sp-menu">
+          <div class="sp-sech"><h2>메뉴판</h2><span>사진과 같은 순서</span></div>
+          <div class="card sp-menu">
+            <div class="r"><div class="n">숯불 7일 숙성 생삼겹살 1인 200g</div><div class="p">16,000원</div></div>
+            <div class="r"><div class="n">숯불 폭립 400g</div><div class="p">29,000원</div></div>
+            <div class="r"><div class="n">된장찌개</div><div class="p">7,000원</div></div>
+            <div class="r"><div class="n">김치말이국수</div><div class="p">9,000원</div></div>
+          </div>
+        </div>
+
+        <div class="sp-sec">
+          <div class="sp-sech"><h2>메뉴 상세</h2><span>한 줄 평가 포함</span></div>
+          <div class="card sp-dish">
+            <img src="photos/pork_set.webp" alt="숯불 7일 숙성 생삼겹살">
+            <div class="bd">
+              <div class="tt"><h3>숯불 7일 숙성 생삼겹살</h3><div class="pr">16,000원</div></div>
+              <div class="ds">7일 저온 숙성한 국내산 생삼겹살을 숯불에 바로 구워 냅니다. 1인 200g.</div>
+              <div class="sp-evh"><div class="l">한 줄 평가</div><div class="ok">사장님 확인</div></div>
+              <div class="sp-er"><div class="k">맛</div><div class="v">불향이 먼저 올라오고 뒤끝은 담백합니다</div></div>
+              <div class="sp-er"><div class="k">식감</div><div class="v">두툼하게 썰어 겉만 바삭하게 굽습니다</div></div>
+              <div class="sp-er"><div class="k">양</div><div class="v">셋이 먹으면 3인분이 알맞습니다</div></div>
+            </div>
+          </div>
+          <div class="card sp-dish" style="margin-top:9px">
+            <img src="photos/naengmyeon.webp" alt="김치말이국수">
+            <div class="bd">
+              <div class="tt"><h3>김치말이국수</h3><div class="pr">9,000원</div></div>
+              <div class="ds">김치 국물을 차갑게 내어 면을 말아 냅니다. 고기 먹고 마무리로.</div>
+              <div class="sp-evh"><div class="l">한 줄 평가</div><div class="ok">사장님 확인</div></div>
+              <div class="sp-er"><div class="k">맛</div><div class="v">김치 국물이 시원하고 맵지 않습니다</div></div>
+              <div class="sp-er"><div class="k">면</div><div class="v">가늘게 삶아 입에 붙지 않습니다</div></div>
+              <div class="sp-er"><div class="k">양</div><div class="v">고기 먹고 한 그릇이면 딱 맞습니다</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sp-sec">
+          <div class="sp-sech"><h2>사진</h2><span>탭하면 크게 보기</span></div>
+          <div class="sp-gal">
+            <figure><img src="photos/resto.webp" alt=""><figcaption>홀</figcaption></figure>
+            <figure><img src="photos/bbq.webp" alt=""><figcaption>숯불 생삼겹살</figcaption></figure>
+            <figure><img src="photos/pork_set.webp" alt=""><figcaption>한 상 차림</figcaption></figure>
+            <figure><img src="photos/naengmyeon.webp" alt=""><figcaption>김치말이국수</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="sp-sec" id="sp-map">
+          <div class="sp-sech"><h2>오시는 길</h2><span>도보 3분</span></div>
+          <div class="card sp-map">
+            <div class="ad">하남시 미사강변동로 85, 1층</div>
+            <div class="walk"><span>미사역 3번 출구 도보 3분</span><span>버스 미사역앞 하차</span><span>건물 뒤 주차 6대</span></div>
+            <div class="sp-hh">
+              <div class="hr"><div class="k">영업시간</div><div class="v">매일 11:30 – 23:00</div></div>
+              <div class="hr"><div class="k">브레이크</div><div class="v">15:00 – 17:00</div></div>
+              <div class="hr"><div class="k">라스트오더</div><div class="v">22:00</div></div>
+              <div class="hr"><div class="k">휴무</div><div class="v">매주 화요일</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub" style="text-align:center;margin-top:16px;line-height:1.6">
+          사장님 단독 홈페이지 · 번개알바가 무료로 만들어 드렸습니다<br>사진·메뉴는 사장님이 직접 고치실 수 있습니다
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 가격표 (시안 이식) ===== -->
+    <section class="view" id="v-price">
+      <div class="pr-h">
+        <button class="sp-back" onclick="ktsGo('home')">← 홈</button>
+        <div class="h1">알바 구인은 <em>평생 0원</em>,<br>사장님이 내시는 돈은<br>광고와 제작뿐입니다</div>
+        <div class="sub">가격표 · 2026년</div>
+      </div>
+
+      <div class="sp-body" style="padding-top:0">
+        <div class="sp-sec" style="margin-top:4px">
+          <div class="sp-sech"><h2>평생 무료</h2><span>0원</span></div>
+          <div class="pr-card">
+            <div class="pr-lr"><div><div class="n">알바 구인 · 매칭</div><div class="d">등록부터 마감까지 · 알바생에게도 0원</div></div><div class="p free">0원</div></div>
+            <div class="pr-lr"><div><div class="n">업소 단독 홈페이지</div><div class="d">사진 · 메뉴 · 한 줄 평가 · 지도까지</div></div><div class="p free">0원</div></div>
+            <div class="pr-lr"><div><div class="n">사진 20장</div><div class="d">대표 사진과 메뉴 사진 포함</div></div><div class="p free">0원</div></div>
+            <div class="pr-lr"><div><div class="n">블로그 글 월 1건</div><div class="d">지역 키워드로 써서 올려 드립니다</div></div><div class="p free">0원</div></div>
+            <div class="pr-lr"><div><div class="n">세무 정리 도구</div><div class="d">셀프로 정리하시는 도구 그대로</div></div><div class="p free">0원</div></div>
+            <div class="pr-lr"><div><div class="n">목록 기본 노출</div><div class="d">상단 순환에도 하루 몇 회차씩 들어갑니다</div></div><div class="p free">0원</div></div>
+          </div>
+        </div>
+
+        <div class="sp-sec">
+          <div class="sp-sech"><h2>상위노출 광고</h2><span>처음 3개월은 그대로 무료</span></div>
+          <div class="pr-plan hi">
+            <div class="pr-badge">자리 1 · 2</div>
+            <div class="ph"><div class="pt">상위노출 10만</div><div class="pp">100,000<small>원/월</small></div></div>
+            <ul>
+              <li>목록 상단 두 자리에 고정</li>
+              <li>5~10초마다 도는 슬라이드에 3회 배정</li>
+              <li>매달 갱신권을 먼저 드립니다</li>
+              <li>포기하시면 다음 순번이 이어받습니다</li>
+            </ul>
+          </div>
+          <div class="pr-plan">
+            <div class="pr-badge" style="background:rgba(255,255,255,.1);color:#DCE4EF;box-shadow:none">자리 3</div>
+            <div class="ph"><div class="pt">상위노출 5만</div><div class="pp">50,000<small>원/월</small></div></div>
+            <ul>
+              <li>하루 시간대를 쪼개 순환하는 자리</li>
+              <li>슬라이드에 1회 배정</li>
+            </ul>
+          </div>
+          <div class="pr-note">슬라이드는 <b>5~10초마다</b> 다음 업소로 넘어갑니다. 자리가 비어 있지 않아도 새로 오신 사장님이 바로 위쪽에서 손님을 만나실 수 있습니다.</div>
+        </div>
+
+        <div class="sp-sec">
+          <div class="sp-sech"><h2>관리 옵션</h2><span>고르시면 켜집니다</span></div>
+          <div class="pr-card">
+            <div class="pr-lr" style="padding-top:12px"><div><div class="n">관리 옵션</div><div class="d">사진 상한 없이 · 메뉴·가격 수정 무제한 · 블로그 매달 3건 · 상위노출 회차 우선</div></div><div class="p">10,000원/월</div></div>
+          </div>
+          <div class="pr-note">관리 옵션을 켜지 않으셔도 <b>사진 20장 · 블로그 월 1건 · 관리자 화면</b>은 그대로 무료입니다.</div>
+        </div>
+
+        <div class="sp-sec">
+          <div class="sp-sech"><h2>메뉴 사진 · 로고</h2><span>한 번만 내시면 됩니다</span></div>
+          <div class="pr-card">
+            <div class="pr-lr" style="padding-top:12px"><div><div class="n">메뉴 사진 3장</div><div class="d">메뉴 하나에 사진 한 장, 이름까지 맞춰서</div></div><div class="p">10,000원</div></div>
+            <div class="pr-lr"><div><div class="n">메뉴 사진 3장 + 로고</div><div class="d">업소 이름을 얹은 로고까지 같이</div></div><div class="p">10,000원</div></div>
+            <div class="pr-lr"><div><div class="n">더 필요하실 때</div><div class="d">3장 단위로 다시 신청하시면 됩니다</div></div><div class="p">3장 10,000원</div></div>
+          </div>
+          <div class="pr-note"><b>샘플을 먼저 보여 드리고</b>, 마음에 드시는 것만 결제하십니다. 실제 메뉴와 다르게 나오면 사장님 확인 뒤에 다시 만들어 드립니다.</div>
+        </div>
+
+        <div class="sp-sec">
+          <div class="sp-sech"><h2>식자재 · 비품</h2><span>업소별 견적</span></div>
+          <div class="pr-card">
+            <div class="pr-lr" style="padding-top:12px"><div><div class="n">직배송</div><div class="d">삼겹 · 목살 · 육수 · 참기름 · 포장재까지 업소에 맞춰 견적</div></div><div class="p">문의</div></div>
+          </div>
+        </div>
+
+        <div class="sub" style="text-align:center;margin-top:18px;line-height:1.7">
+          알바 매칭에는 어떤 비용도 받지 않습니다<br>위 금액은 모두 광고 · 제작 비용입니다
+        </div>
+        <div class="sub" style="text-align:center;margin-top:6px;color:var(--gray2);font-size:10.5px">
+          표시 금액은 부가세 포함 · 상위노출 광고는 처음 3개월 뒤부터 고르실 수 있습니다
+        </div>
+        <div class="kts-click">
+          <a class="pri" href="tel:01020022899">010-2002-2899</a>
+          <button onclick="ktsGo('shop')">가게 홈피 보기</button>
+        </div>
+      </div>
+    </section>
+
     <section class="view" id="v-me">
       <div class="card" style="margin-top:2px">
         <div class="prof">
           <div class="av">태</div>
           <div>
-            <div class="nm">김태수 <span class="badge b-amb">사장님</span></div>
+            <div class="nm">미사 상권 사장님 <span class="badge b-amb">사장님</span></div>
             <div class="mt">하남 미사동 · 역전할맥</div>
           </div>
         </div>
@@ -1773,11 +2143,11 @@
 
     <div class="sec-head" style="margin-top:16px;padding:0"><h2 style="font-size:14px">제휴 매장 관리</h2><span class="more">3곳</span></div>
     <div class="card" style="padding:4px 14px;margin-top:6px">
-      <button class="rowbtn" onclick="toast('BHC치킨 미사호반점 · 10% 할인권 제휴중 (발행 5장 / 사용 2장)')">
-        <span class="ic">🍗</span><span class="tx">BHC치킨 미사호반점<small>제휴중 · 발행 5장 · 사용 2장</small></span><span class="ar" style="font-size:11px;color:#5BE9A6;font-weight:900">제휴중</span>
+      <button class="rowbtn" onclick="toast('미사 호반 치킨 · 10% 할인권 제휴중 (발행 5장 / 사용 2장)')">
+        <span class="ic">🍗</span><span class="tx">미사 호반 치킨<small>제휴중 · 발행 5장 · 사용 2장</small></span><span class="ar" style="font-size:11px;color:#5BE9A6;font-weight:900">제휴중</span>
       </button>
-      <button class="rowbtn" onclick="toast('역전할머니맥주 하남미사점 · 10% 할인권 제휴중 (발행 4장 / 사용 1장)')">
-        <span class="ic">🍺</span><span class="tx">역전할머니맥주 하남미사점<small>제휴중 · 발행 4장 · 사용 1장</small></span><span class="ar" style="font-size:11px;color:#5BE9A6;font-weight:900">제휴중</span>
+      <button class="rowbtn" onclick="toast('미사 호프 3번가 · 10% 할인권 제휴중 (발행 4장 / 사용 1장)')">
+        <span class="ic">🍺</span><span class="tx">미사 호프 3번가<small>제휴중 · 발행 4장 · 사용 1장</small></span><span class="ar" style="font-size:11px;color:#5BE9A6;font-weight:900">제휴중</span>
       </button>
       <button class="rowbtn" onclick="toast('미사 숙성삼겹 명가 · 10% 할인권 제휴중 (발행 3장 / 사용 1장)')">
         <span class="ic">🥩</span><span class="tx">미사 숙성삼겹 명가<small>제휴중 · 발행 3장 · 사용 1장</small></span><span class="ar" style="font-size:11px;color:#5BE9A6;font-weight:900">제휴중</span>
@@ -1808,11 +2178,11 @@
 
     <div class="sec-head" style="margin-top:15px;padding:0"><h2 style="font-size:14px">사용처 (미사 3곳)</h2><span class="more">반경 3km</span></div>
     <div class="card" style="padding:4px 14px;margin-top:6px">
-      <button class="rowbtn" onclick="useMyCoupon('BHC치킨 미사호반점')">
-        <span class="ic">🍗</span><span class="tx">BHC치킨 미사호반점<small>전메뉴 10% · 도보 4분</small></span><span class="ar" style="font-size:11px;color:#FFA24D;font-weight:900">사용</span>
+      <button class="rowbtn" onclick="useMyCoupon('미사 호반 치킨')">
+        <span class="ic">🍗</span><span class="tx">미사 호반 치킨<small>전메뉴 10% · 도보 4분</small></span><span class="ar" style="font-size:11px;color:#FFA24D;font-weight:900">사용</span>
       </button>
-      <button class="rowbtn" onclick="useMyCoupon('역전할머니맥주 하남미사점')">
-        <span class="ic">🍺</span><span class="tx">역전할머니맥주 하남미사점<small>생맥주 10% · 도보 5분</small></span><span class="ar" style="font-size:11px;color:#FFA24D;font-weight:900">사용</span>
+      <button class="rowbtn" onclick="useMyCoupon('미사 호프 3번가')">
+        <span class="ic">🍺</span><span class="tx">미사 호프 3번가<small>생맥주 10% · 도보 5분</small></span><span class="ar" style="font-size:11px;color:#FFA24D;font-weight:900">사용</span>
       </button>
       <button class="rowbtn" onclick="useMyCoupon('미사 숙성삼겹 명가')">
         <span class="ic">🥩</span><span class="tx">미사 숙성삼겹 명가<small>전메뉴 10% · 도보 7분</small></span><span class="ar" style="font-size:11px;color:#FFA24D;font-weight:900">사용</span>
@@ -1981,17 +2351,17 @@
   /* ================= data ================= */
   var STORES = window.STORES = [
 
-    {id:"s_bhc",cat:"food",catName:"치킨·호프",adult:false,name:"BHC치킨 미사호반점",emoji:"🍗",tag:"전메뉴 10% 즉시할인",
+    {id:"s_bhc",cat:"food",catName:"치킨·호프",adult:false,name:"미사 호반 치킨",emoji:"🍗",tag:"전메뉴 10% 즉시할인",
      photos:[["photos/bhc_bburinkle.webp","뿌링클 실사"],["photos/bhc_matchoking.webp","맛초킹 실사"],["photos/bhc_goldking.webp","골드킹 실사"]],abc:"4.9",
-     desc:"BHC 공식 매장 · 갓 튀긴 바삭함 · 치즈볼 세트",
+     desc:"미사 상권 제휴 매장 · 갓 튀긴 바삭함 · 치즈볼 세트",
      addr:"경기 하남시 미사강변한강로 270, 1층",tel:"031-795-9982",walk:"미사역 4분",
      hours:"12:00 ~ 24:00 (연중무휴)",offer:"전메뉴 10% 포장할인 · 치즈볼 무료 쿠폰",line:"하남 미사 1등 치킨 · 당일 10분 매칭",
      badge:"공식인증",
      menu:[
-       ["뿌링클","BHC 대표 시그니처! 달콤짭짤 치즈 시즈닝 치킨","21,000원",1,"photos/bhc_bburinkle.webp"],
+       ["뿌링클","대표 시그니처! 달콤짭짤 치즈 시즈닝 치킨","21,000원",1,"photos/bhc_bburinkle.webp"],
        ["맛초킹","숙성 간장과 청양고추의 매콤달콤한 환상 풍미","21,000원",1,"photos/bhc_matchoking.webp"],
        ["골드킹","숙성 간장과 꿀, 알싸한 마늘의 황금비율","21,000원",0,"photos/bhc_goldking.webp"],
-       ["HOT후라이드","바삭하고 매콤한 BHC 부동의 인기 후라이드","21,000원",0,"photos/bhc_hotfried.webp"],
+       ["HOT후라이드","바삭하고 매콤한 부동의 인기 후라이드","21,000원",0,"photos/bhc_hotfried.webp"],
        ["양념치킨","달콤매콤 비법 소스로 버무린 정통 양념","21,000원",0,"photos/bhc_yangnyeom.webp"],
        ["뿌링치즈볼 (5개)","치즈 듬뿍 바삭 쫄깃 치즈볼 + 뿌링 시즈닝","6,000원",0,"photos/bhc_cheeseball.webp"]
      ],
@@ -2025,7 +2395,7 @@
      ],
      reviews:[["최**","고기 두께 미쳤고 육즙이 팡팡 터집니다.","어제"],["강**","단체 회식했는데 다들 대만족했어요.","4일 전"]]},
 
-    {id:"s3",cat:"drink",catName:"술집·주점",adult:true,name:"역전할머니맥주 하남미사점",emoji:"🍺",tag:"10% 즉시 할인",
+    {id:"s3",cat:"drink",catName:"술집·주점",adult:true,name:"미사 호프 3번가",emoji:"🍺",tag:"10% 즉시 할인",
      photos:[["photos/draft_beer.webp","살얼음 생맥주 실사"],["photos/tteokbokki.webp","매콤 짜파구리 실사"],["photos/bar_snack.webp","바삭 튀김 안주 실사"]],abc:"4.7",
      desc:"얼음잔 특허 살얼음 생맥주 · 가성비 극강 안주 천국",
      addr:"경기 하남시 미사강변중앙로 190, 1층",tel:"031-792-8812",walk:"미사역 4분",
@@ -2506,7 +2876,7 @@
       '<div class="sub" style="margin-top:2px">2026.11.11 자동 발급 · 전자서명 완료</div>'+
       '<div class="card" style="margin-top:13px;padding:16px;font-size:12.5px;line-height:1.75;color:var(--ink2)">'+
         '<div style="font-weight:900;font-size:13.5px;color:#fff;margin-bottom:7px">근로계약서 (단시간 근로)</div>'+
-        '사업주: 김태수 (역전할머니맥주 하남미사점)<br>'+
+        '사업주: 미사 상권 매장<br>'+
         '근로자: '+name+'<br>'+
         '근로일: 2026년 11월 11일 (수)<br>'+
         '근로시간: 19:00 ~ 21:00 (2시간)<br>'+
@@ -2727,7 +3097,7 @@
     });
   }
 
-  window.wsOrder = function(){ toast("주문 요청 접수 · 사업자등록증 확인 후 도매가 확정 문자를 보내드립니다"); };
+  window.wsOrder = function(){ toast("주문 요청 접수 · 사업자등록증 확인 후 전용가 확정 문자를 보내드립니다"); };
   window.openWholesale = function(){
     render();
     openSheet("sh-ws");
@@ -2818,7 +3188,7 @@
       '<div class="menu">'+d.items.map(function(x){
         return '<div class="mi"><div class="nm">'+x[0]+'</div><div class="pr">'+x[1]+'</div></div>'; }).join("")+'</div>'+
       '<div class="card" style="margin-top:14px;padding:14px;display:flex;justify-content:space-between;align-items:center">'+
-        '<div><div class="sub">총 예상 시공비 ('+d.pyung+')</div><div style="font-size:21px;font-weight:900;color:#FFB067;margin-top:2px">'+(k===1000?'1,000':k)+'만 원</div></div>'+
+        '<div><div class="sub">총 예상 공사 금액 ('+d.pyung+')</div><div style="font-size:21px;font-weight:900;color:#FFB067;margin-top:2px">'+(k===1000?'1,000':k)+'만 원</div></div>'+
         '<div class="sub" style="text-align:right;line-height:1.5">자재비+인건비 일체<br><b style="color:#5BE9A6">추가비용 0원 원칙</b></div>'+
       '</div>'+
       '<button class="btn btn-amb btn-full" style="margin-top:14px" onclick="requestAIQuote()">내 매장 사진으로 무료 3D 렌더링 신청</button>'+
@@ -2904,7 +3274,7 @@
     if(s.includes("등록") || s.includes("구인") || s.includes("사장님")){
       rep = "사장님 구인 등록은 1초 만에 끝납니다! ⚡<br>• 홈 화면 상단 <strong>[⚡ 긴급 구인등록]</strong>을 누르시면 시급과 시간만 정해 즉시 반경 3km 내 대기 알바생에게 실시간 레이더 호출이 전송됩니다.";
     } else if(s.includes("홈피") || s.includes("홈페이지") || s.includes("무료")){
-      rep = "골목상권 살리기 지원센터에서 <strong>매장 단독 모바일 홈페이지를 100% 무료</strong>로 제작해 드립니다! 📱<br>• 사장님 인사말, 실사 메뉴판, 10% 쿠폰, 길찾기, 24시 AI 챗봇이 완비된 사이트를 평생 무료로 배포해 드립니다.<br>• 신청 문의: 대표님 카톡 또는 010-2002-2899";
+      rep = "소상공인 지원팀 번개알바에서 <strong>매장 단독 모바일 홈페이지를 100% 무료</strong>로 제작해 드립니다! 📱<br>• 사장님 인사말, 실사 메뉴판, 10% 쿠폰, 길찾기, 24시 AI 챗봇이 완비된 사이트를 평생 무료로 배포해 드립니다.<br>• 신청 문의: 대표님 카톡 또는 010-2002-2899";
     } else if(s.includes("수수료") || s.includes("비용") || s.includes("돈") || s.includes("가격")){
       rep = "네, 맞습니다! 💰<br>• 가입비 0원, 구인 등록비 0원, 매칭 수수료 0원입니다.<br>• 카드 등록도 일체 요구하지 않으며, 순수하게 지역 소상공인 구인난을 해결하기 위해 무료 운영됩니다.";
     } else if(s.includes("알바") || s.includes("구직") || s.includes("학생") || s.includes("수락")){
@@ -3048,7 +3418,7 @@ window.openStoreSite = function(cat){
   } else if(cat === 'resto'){
     window.open('https://tan-jaguar-gyg31.ship.place/', '_blank');
   } else if(cat === 'bar'){
-    toast('🍺 역전할머니맥주 하남미사점: 포장 10% DC & 2차 안주 서비스');
+    toast('🍺 미사 호프 3번가: 포장 10% DC & 2차 안주 서비스');
   } else if(cat === 'night'){
     toast('🛵 심야불닭발 미사본점: 배달비 무료 + 대형 쿨피스 쿠폰 적용');
   } else if(cat === 'slot'){
@@ -3059,7 +3429,7 @@ window.openStoreSite = function(cat){
 </script>
 
 <script>
-/* ==================== 김태수 군단 1·2·3 참모 인터랙션 컨트롤러 ==================== */
+/* ==================== KTS 참모 1·2·3 인터랙션 컨트롤러 ==================== */
 (function() {
   console.log("⚡ 번개알바 참모 컨트롤러 장착 완료");
 
@@ -3695,7 +4065,7 @@ window.openStoreSite = function(cat){
         <div style="display:flex;justify-content:space-between;align-items:center">
           <div>
             <div style="font-size:10px;color:#94A3B8;font-weight:700">사업주 (갑)</div>
-            <div style="font-size:12.5px;font-weight:900;color:#FFF;margin-top:1px">BHC치킨 미사호반점 (사업자 120-88-29401)</div>
+            <div style="font-size:12.5px;font-weight:900;color:#FFF;margin-top:1px">미사 호반 치킨 (사업자 120-88-29401)</div>
           </div>
           <div style="display:flex;align-items:center;gap:6px">
             <span style="font-size:11px;color:#5BE9A6;font-weight:800">대표 김*수</span>
@@ -4244,7 +4614,7 @@ window.acceptWorkerJob = function(store, job, wage) {
   window.confirmGpsConsent = function(){
     var cb = document.getElementById('gpsAgree');
     if(!cb || !cb.checked) return;
-    var st = {store: pending ? pending.store : 'BHC치킨 미사호반점',
+    var st = {store: pending ? pending.store : '미사 호반 치킨',
               job: pending ? pending.job : '2시간 홀서빙',
               wage: pending ? pending.wage : 35640,
               at: Date.now(), consent: true};
@@ -4353,5 +4723,119 @@ window.acceptWorkerJob = function(store, job, wage) {
 })();
 </script>
 
+<script>
+/* ===== 시안 이식분: 화면 전환 · 상단 3자리 회전 · 방문/클릭 카운터 ===== */
+(function () {
+  "use strict";
+
+  /* ── 화면 전환 (하단 탭 밖의 화면도 열 수 있게) ── */
+  window.ktsGo = function (v) {
+    var target = document.getElementById("v-" + v);
+    if (!target) return false;
+    document.querySelectorAll(".view").forEach(function (el) {
+      el.classList.toggle("on", el.id === "v-" + v);
+    });
+    document.querySelectorAll("nav .tab").forEach(function (t) {
+      t.classList.toggle("on", t.getAttribute("data-v") === v);
+    });
+    window.scrollTo({ top: 0, behavior: "auto" });
+    if (typeof window.toast === "function") {
+      window.toast(v === "shop" ? "가게 단독 홈페이지 예시 화면" :
+        v === "price" ? "가격표 화면" : "홈으로 이동했습니다");
+    }
+    return false;
+  };
+
+  /* ── 상단 3자리 상위노출 회전 ── */
+  function strip(trackId, dotsId, srcTrack) {
+    var track = document.getElementById(trackId);
+    var dotsBox = document.getElementById(dotsId);
+    if (!track || !dotsBox) return;
+    if (srcTrack && !track.children.length) {
+      track.innerHTML = srcTrack.innerHTML;
+    }
+    var cells = track.children, n = cells.length;
+    if (!n) return;
+    var i = 0, step = 0, timer = null;
+    for (var d = 0; d < 3; d++) dotsBox.appendChild(document.createElement("i"));
+    function measure() {
+      var w = cells[0].getBoundingClientRect().width;
+      var gap = parseFloat(getComputedStyle(track).gap || "8");
+      step = w + gap;
+    }
+    function paint() {
+      track.style.transform = "translateX(" + (-i * step) + "px)";
+      for (var k = 0; k < 3; k++) dotsBox.children[k].className = (k === (i % 3)) ? "on" : "";
+    }
+    function tick() {
+      i = i + 1; paint();
+      if (i >= n - 2) {
+        setTimeout(function () {
+          track.style.transition = "none"; i = 0; paint(); void track.offsetWidth;
+          track.style.transition = "";
+        }, 680);
+      }
+    }
+    function start() {
+      measure(); paint();
+      clearInterval(timer); timer = setInterval(tick, 6000);
+    }
+    window.addEventListener("resize", start);
+    start();
+  }
+  var homeTrack = document.getElementById("adstripTrack");
+  strip("adstripTrack", "adstripDots", null);
+  strip("adstripTrack2", "adstripDots2", homeTrack);
+
+  /* ── 무료 방문·클릭 카운터 (hits.sh · 계정 없음 · 개인정보 미수집) ──
+     이미지 1장이 곧 1회 집계입니다. 쿠키·식별자·개인정보를 저장하지 않습니다. */
+  var HOST = "kim779944-max.github.io/bungaealba";
+  function dayKey() {
+    var d = new Date();
+    return "" + d.getFullYear() + String(d.getMonth() + 1).padStart(2, "0") + String(d.getDate()).padStart(2, "0");
+  }
+  function badge(path, label) {
+    return "https://hits.sh/" + path + ".svg?label=" + encodeURIComponent(label) + "&color=FF6B00";
+  }
+  function counterBox() {
+    var box = document.createElement("div");
+    box.className = "cnt-box";
+    box.innerHTML =
+      '<span class="lb">방문</span>' +
+      '<img alt="오늘 방문 수" src="' + badge(HOST + "-d" + dayKey(), "오늘") + '">' +
+      '<img alt="누적 방문 수" src="' + badge(HOST, "누적") + '">' +
+      '<span class="lb">문의 클릭</span>' +
+      '<img alt="문의 클릭 수" src="' + badge(HOST + "-call", "클릭") + '">' +
+      '<span class="note">익명 접속 수 · 쿠키·개인정보 수집 없음 · 계정 불필요</span>';
+    box.querySelectorAll("img").forEach(function (im) {
+      im.addEventListener("error", function () {
+        var t = document.createElement("span");
+        t.className = "lb";
+        t.textContent = "집계 준비중";
+        im.replaceWith(t);
+      });
+    });
+    return box;
+  }
+  function putCounter(viewId) {
+    var v = document.getElementById(viewId);
+    if (!v || v.querySelector(".cnt-box")) return;
+    var body = v.querySelector(".sp-body") || v;
+    body.appendChild(counterBox());
+  }
+  putCounter("v-home");
+  putCounter("v-shop");
+  putCounter("v-price");
+
+  /* 문의 클릭 집계 — tel: 링크를 누르면 클릭 1회로 센다 */
+  var callKey = HOST + "-call";
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (!a || !document.getElementById("app").contains(a)) return;
+    try { new Image().src = badge(callKey, "클릭") + "&t=" + Date.now(); } catch (err) { }
+  });
+})();
+
+</script>
 </body>
 </html>
