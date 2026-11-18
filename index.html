@@ -971,6 +971,90 @@
   .cnt-box .lb{font-size:10.5px;font-weight:800;color:var(--ink2)}
   .cnt-box img{height:18px;display:block;border-radius:4px}
   .cnt-box .note{font-size:9.5px;color:var(--gray2);width:100%;text-align:center;margin-top:2px}
+  /* ===== 2026-11-18 추가: 10분 컷 지도 · 사장님 선제안 · 요일/당일지급+찜 · 1분 이력서 ===== */
+  .mc-b{display:inline-block;font-size:9.5px;font-weight:900;color:#0B2C1B;background:var(--green);border-radius:999px;padding:3px 7px;margin-left:5px;vertical-align:middle;letter-spacing:0}
+  .mcmap{position:relative;height:238px;border-radius:16px;overflow:hidden;border:1px solid var(--line2);
+    background:radial-gradient(70% 70% at 50% 50%,#17305C 0%,#0F2145 58%,#0A1730 100%)}
+  .mcmap::before,.mcmap::after{content:"";position:absolute;background:rgba(255,255,255,.07)}
+  .mcmap::before{left:0;right:0;top:46%;height:7px}
+  .mcmap::after{top:0;bottom:0;left:58%;width:6px}
+  .mc-ring{position:absolute;left:50%;top:50%;width:74%;height:74%;transform:translate(-50%,-50%);
+    border:1.5px dashed rgba(255,107,0,.6);border-radius:50%}
+  .mc-ring.r2{width:37%;height:37%;border-color:rgba(255,107,0,.28);border-style:dotted}
+  .mc-me{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:9px;font-weight:900;color:#0B2C1B;
+    background:var(--green);border-radius:999px;padding:3px 7px;box-shadow:0 0 0 3px rgba(46,212,122,.18);z-index:1}
+  .mc-pin{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:2px;z-index:2;padding:0}
+  .mc-pin i{display:grid;place-items:center;width:30px;height:30px;border-radius:50% 50% 50% 6px;transform:rotate(-45deg);
+    background:#1B2C55;border:1.5px solid #3A5285;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+  .mc-pin i b{transform:rotate(45deg);font-style:normal;font-size:9.5px;font-weight:900;color:#DCE6F2}
+  .mc-pin.on i{background:linear-gradient(145deg,#FF9020,#FF6B00);border-color:#FFB067}
+  .mc-pin.on i b{color:#20100A}
+  .mc-pin.far{opacity:.34}
+  .mc-pin>span{font-size:8.5px;font-weight:800;color:#AFBDD0;background:rgba(8,16,34,.75);border-radius:6px;padding:1px 5px;white-space:nowrap}
+  .mc-info{margin-top:9px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.04);
+    padding:10px 11px;font-size:11.5px;line-height:1.55;color:var(--ink2)}
+  .mc-info b{color:#fff}
+  .mc-info .go{display:block;margin-top:8px;width:100%;font-family:inherit;font-size:12px;font-weight:900;color:#1E0D00;
+    background:linear-gradient(135deg,var(--amber2),var(--amber));border-radius:10px;padding:10px}
+  .of{border:1px solid var(--amber-line);border-radius:13px;padding:10px 11px;
+    background:linear-gradient(120deg,rgba(255,107,0,.1),rgba(255,255,255,.02))}
+  .of+.of{margin-top:8px}
+  .of .h{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:900;color:#fff}
+  .of .h span{margin-left:auto;font-size:9.5px;font-weight:900;color:#20100A;background:var(--amber2);border-radius:6px;padding:2px 6px}
+  .of p{margin:5px 0 0;font-size:11px;line-height:1.55;color:#C7D3E3}
+  .of .r{display:flex;gap:6px;margin-top:8px}
+  .of .r button{flex:1;font-family:inherit;font-size:11px;font-weight:900;border-radius:9px;padding:8px;
+    border:1px solid var(--line2);background:#12203C;color:#DCE6F2}
+  .of .r button.ok{background:linear-gradient(135deg,var(--amber2),var(--amber));border-color:var(--amber);color:#1E0D00}
+  .jb-chips{display:flex;gap:5px;overflow:auto;padding:0 0 8px;scrollbar-width:none}
+  .jb-chips::-webkit-scrollbar{display:none}
+  .jb-chips button{flex:0 0 auto;font-family:inherit;font-size:11px;font-weight:900;color:var(--gray);
+    background:#0E1B33;border:1px solid var(--line);border-radius:999px;padding:7px 11px}
+  .jb-chips button.on{color:#1E0D00;background:linear-gradient(180deg,#FF8A2B,var(--amber));border-color:var(--amber)}
+  .jb{border:1px solid var(--line);border-radius:13px;padding:10px 11px;background:rgba(255,255,255,.035)}
+  .jb+.jb{margin-top:8px}
+  .jb .t{display:flex;align-items:flex-start;gap:8px}
+  .jb .t b{font-size:12.5px;font-weight:900;color:#fff;letter-spacing:-.3px}
+  .jb .t .s{font-size:10.5px;color:var(--gray);margin-top:2px}
+  .jb .fav{margin-left:auto;flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:1px solid var(--line2);
+    background:rgba(255,255,255,.04);font-size:14px;line-height:1;padding:0}
+  .jb .fav.on{background:rgba(255,77,94,.16);border-color:rgba(255,77,94,.5)}
+  .jb .m{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+  .jb .m span{font-size:9.5px;font-weight:900;border-radius:6px;padding:2px 6px;background:rgba(255,255,255,.06);color:#C7D3E3}
+  .jb .m .pay{background:rgba(46,212,122,.14);color:#7BF0B6}
+  .jb .m .td{background:rgba(255,107,0,.16);color:#FFB27A}
+  .jb .btn2{margin-top:8px;width:100%;font-family:inherit;font-size:11.5px;font-weight:900;color:#1E0D00;
+    background:linear-gradient(135deg,var(--amber2),var(--amber));border-radius:9px;padding:9px}
+  .rs-f{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+  .rs-f label{display:block;font-size:10.5px;font-weight:800;color:var(--gray);margin:8px 0 4px}
+  .rs-f input,.rs-f select,.rs-f textarea{width:100%;font-family:inherit;font-size:12.5px;font-weight:700;color:#fff;
+    background:#0B1730;border:1px solid var(--line2);border-radius:10px;padding:9px 10px}
+  .rs-f textarea{min-height:52px;resize:vertical}
+  #rsForm>label{display:block;font-size:10.5px;font-weight:800;color:var(--gray);margin:9px 0 4px}
+  #rsForm>input{width:100%;font-family:inherit;font-size:12.5px;font-weight:700;color:#fff;
+    background:#0B1730;border:1px solid var(--line2);border-radius:10px;padding:9px 10px}
+  .rs-days{display:flex;gap:4px;margin-top:2px}
+  .rs-days button{flex:1;font-family:inherit;font-size:10.5px;font-weight:900;color:var(--gray);background:#0E1B33;
+    border:1px solid var(--line);border-radius:8px;padding:7px 0}
+  .rs-days button.on{color:#1E0D00;background:linear-gradient(180deg,#FF8A2B,var(--amber));border-color:var(--amber)}
+  .rs-prev{margin-top:9px;border:1px dashed var(--line2);border-radius:11px;padding:9px 10px;font-size:11px;
+    line-height:1.6;color:#DCE5F1;white-space:pre-wrap;background:rgba(255,255,255,.02)}
+  .rs-act{display:flex;gap:6px;margin-top:8px}
+  .rs-act button{flex:1;font-family:inherit;font-size:11px;font-weight:900;border-radius:9px;padding:9px;
+    border:1px solid var(--line2);background:#12203C;color:#DCE6F2}
+  .rs-act button.go{background:linear-gradient(135deg,var(--amber2),var(--amber));border-color:var(--amber);color:#1E0D00}
+  .ofModal{position:fixed;inset:0;background:rgba(3,7,16,.72);z-index:80;display:none;align-items:center;justify-content:center;padding:18px}
+  .ofModal.on{display:flex}
+  .ofModal .bx{width:100%;max-width:340px;background:#0E1B33;border:1px solid var(--amber-line);border-radius:18px;padding:15px}
+  .ofModal b{display:block;font-size:14px;font-weight:900;color:#fff}
+  .ofModal label{display:block;font-size:10.5px;font-weight:800;color:var(--gray);margin:9px 0 4px}
+  .ofModal input,.ofModal textarea{width:100%;font-family:inherit;font-size:12.5px;font-weight:700;color:#fff;
+    background:#0B1730;border:1px solid var(--line2);border-radius:10px;padding:9px 10px}
+  .ofModal textarea{min-height:54px;resize:vertical}
+  .ofModal .r{display:flex;gap:6px;margin-top:11px}
+  .ofModal .r button{flex:1;font-family:inherit;font-size:12px;font-weight:900;border-radius:10px;padding:10px;
+    border:1px solid var(--line2);background:#12203C;color:#DCE6F2}
+  .ofModal .r button.go{background:linear-gradient(135deg,var(--amber2),var(--amber));border-color:var(--amber);color:#1E0D00}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"번개알바",
@@ -1720,6 +1804,65 @@
         <div class="sub" style="margin-top:10px;text-align:center">무응답 시 2순위에게 자동 토스 · 노쇼 시 다음 호출 순위 불이익</div>
       </div>
 
+      <!-- ===== 2026-11-18 추가: 10분 컷 지도 · 사장님 선제안 · 요일/당일지급+찜 · 1분 이력서 ===== -->
+      <div class="card" style="margin-top:11px">
+        <div class="sec-head" style="padding:0 0 9px">
+          <h2 style="font-size:14.5px">10분 컷 지도<span class="mc-b">도보 10분</span></h2>
+          <span class="more">미사역 기준</span>
+        </div>
+        <div class="mcmap" id="mcMap">
+          <span class="mc-ring"></span><span class="mc-ring r2"></span>
+          <span class="mc-me">나</span>
+          <div id="mcPins"></div>
+        </div>
+        <div class="mc-info" id="mcInfo">핀을 누르면 그 자리 조건이 여기 나옵니다. 도보 10분이 넘는 곳은 흐리게 표시됩니다.</div>
+      </div>
+
+      <div class="card" style="margin-top:11px">
+        <div class="sec-head" style="padding:0 0 8px">
+          <h2 style="font-size:14.5px">사장님 선제안</h2><span class="more" id="ofN">0건</span>
+        </div>
+        <div id="ofList"></div>
+      </div>
+
+      <div class="card" style="margin-top:11px">
+        <div class="sec-head" style="padding:0 0 8px">
+          <h2 style="font-size:14.5px">알바 찾기</h2><span class="more" id="jbN">0곳</span>
+        </div>
+        <div class="jb-chips" id="jbDays"></div>
+        <div class="jb-chips" id="jbTog">
+          <button type="button" data-t="today">당일지급</button>
+          <button type="button" data-t="fav">찜만 보기</button>
+        </div>
+        <div id="jbList"></div>
+      </div>
+
+      <div class="card" style="margin-top:11px">
+        <div class="sec-head" style="padding:0 0 8px">
+          <h2 style="font-size:14.5px">1분 이력서</h2><span class="more" id="rsN">작성 전</span>
+        </div>
+        <div class="sub" style="margin-top:-2px">한 번 써 두면 지원 문구에 함께 붙습니다.</div>
+        <form id="rsForm" onsubmit="return false">
+          <div class="rs-f">
+            <div><label>이름(가명 OK)</label><input id="rsName" maxlength="12" placeholder="예: 김○○"></div>
+            <div><label>나이대</label><select id="rsAge"><option>20대</option><option>30대</option><option selected>40대</option><option>50대</option><option>60대 이상</option></select></div>
+          </div>
+          <div class="rs-f">
+            <div><label>경력</label><select id="rsExp"><option>처음</option><option>1년 미만</option><option selected>1~3년</option><option>3년 이상</option></select></div>
+            <div><label>가능 시간</label><select id="rsTime"><option>오전</option><option>오후</option><option selected>저녁</option><option>심야</option><option>종일</option></select></div>
+          </div>
+          <label>가능 요일</label>
+          <div class="rs-days" id="rsDays"></div>
+          <label>한 줄 소개</label>
+          <input id="rsLine" maxlength="40" placeholder="예: 손 빠르고 조용히 일합니다.">
+        </form>
+        <div class="rs-prev" id="rsPrev" hidden></div>
+        <div class="rs-act">
+          <button type="button" class="go" id="rsSave">이력서 저장</button>
+          <button type="button" id="rsCopy">복사</button>
+        </div>
+      </div>
+
       <div class="card" style="margin-top:11px">
         <div class="row" style="padding:0 0 4px">
           <div class="who">
@@ -1955,6 +2098,9 @@
       <div class="card" style="margin-top:11px;padding:4px 18px">
         <button class="rowbtn" onclick="openSheet('sh-board')">
           <span class="ic">📣</span><span class="tx">전광판 광고 슬롯<small>월 99,000원 · 잔여 3/10</small></span><span class="ar">›</span>
+        </button>
+        <button class="rowbtn" onclick="openSendOffer()">
+          <span class="ic">📨</span><span class="tx">사장님 선제안 보내기<small>오늘 급구 · 시급 올려 먼저 제안</small></span><span class="ar">›</span>
         </button>
         <button class="rowbtn" onclick="openOwnerCoupon()">
           <span class="ic">🎟</span><span class="tx">10% 할인권 발행 · 제휴 관리<small id="ocStatsMenu">사장님 전용 · 발행 12장 · 잔여 8장</small></span><span class="ar">›</span>
@@ -4834,6 +4980,247 @@ window.acceptWorkerJob = function(store, job, wage) {
     if (!a || !document.getElementById("app").contains(a)) return;
     try { new Image().src = badge(callKey, "클릭") + "&t=" + Date.now(); } catch (err) { }
   });
+})();
+
+</script>
+<script>
+/* ===== 2026-11-18 추가 4기능: 10분 컷 지도 · 사장님 선제안 · 요일/당일지급 필터+찜 · 1분 이력서 ===== */
+(function(){
+  var q=function(s,r){ return (r||document).querySelector(s); };
+  var qa=function(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  var LS={ get:function(k,d){ try{ var v=localStorage.getItem(k); return v==null?d:JSON.parse(v); }catch(e){ return d; } },
+           set:function(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} } };
+  function say(m){ try{ if(window.toast) window.toast(m); }catch(e){} }
+
+  /* ---------- 알바 자리 (미사 상권 예시 · 도보 분) ---------- */
+  var JOBS=[
+    {id:'j1',shop:'미사 호프 3번가',role:'홀서빙 · 빈 테이블 정리',mins:5,ang:-42,pay:'12,500원',today:true,days:['금','토','일'],time:'오늘 19:00~21:00',spots:1},
+    {id:'j2',shop:'미사 숙성삼겹 명가',role:'피크타임 홀 · 상차리기',mins:4,ang:36,pay:'12,000원',today:true,days:['목','금','토'],time:'오늘 18:00~21:00',spots:2},
+    {id:'j3',shop:'미사 호반 치킨',role:'포장 · 튀김 보조',mins:8,ang:132,pay:'11,800원',today:false,days:['월','수','금'],time:'주 3일 17:00~22:00',spots:1},
+    {id:'j4',shop:'심야불닭발 미사본점',role:'야간 패킹 · 설거지',mins:9,ang:-140,pay:'13,200원',today:true,days:['금','토'],time:'오늘 22:00~01:00',spots:1},
+    {id:'j5',shop:'미사 카페 12번가',role:'오픈 준비 · 음료 보조',mins:7,ang:-86,pay:'11,500원',today:false,days:['화','목'],time:'주 2일 08:00~12:00',spots:1},
+    {id:'j6',shop:'미사 편의점 24',role:'야간 계산 · 진열',mins:13,ang:62,pay:'12,000원',today:true,days:['월','화','수','목','금','토','일'],time:'오늘 23:00~07:00',spots:2},
+    {id:'j7',shop:'미사 곱창 본점',role:'주방 보조 · 상차리기',mins:6,ang:-8,pay:'12,800원',today:false,days:['수','목','금'],time:'주 3일 17:30~22:30',spots:1},
+    {id:'j8',shop:'미사 베이커리 온',role:'계산 · 포장',mins:11,ang:200,pay:'11,700원',today:true,days:['토','일'],time:'주말 09:00~14:00',spots:1}
+  ];
+  var DOW=['월','화','수','목','금','토','일'];
+  function jobById(id){ for(var i=0;i<JOBS.length;i++){ if(JOBS[i].id===id) return JOBS[i]; } return null; }
+
+  var favs=LS.get('ba_fav',[]); if(!Array.isArray(favs)) favs=[];
+  var state={day:'all',today:false,favOnly:false,sel:null};
+
+  function copy(txt,msg){
+    var done=false;
+    function fb(){
+      if(done) return; done=true;
+      var ta=document.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); say(msg); }catch(e){ say('복사가 막혀 있습니다 — 길게 눌러 복사하세요'); }
+      document.body.removeChild(ta);
+    }
+    function ok(){ if(done) return; done=true; say(msg); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      try{ navigator.clipboard.writeText(txt).then(ok, fb); setTimeout(fb, 700); }catch(e){ fb(); }
+    } else fb();
+  }
+
+  /* ============================ 1. 10분 컷 지도 ============================ */
+  function renderMap(){
+    var box=q('#mcPins'); if(!box) return;
+    box.innerHTML=JOBS.map(function(j){
+      var r=Math.min(44,(j.mins/10)*37), a=j.ang*Math.PI/180;
+      var x=50+r*Math.cos(a), y=50+r*Math.sin(a);
+      return '<button type="button" class="mc-pin'+(j.mins>10?' far':'')+(state.sel===j.id?' on':'')+'"'+
+        ' data-j="'+j.id+'" style="left:'+x.toFixed(1)+'%;top:'+y.toFixed(1)+'%"'+
+        ' aria-label="'+j.shop+' 도보 '+j.mins+'분"><i><b>'+j.mins+'</b></i>'+
+        '<span>'+(j.mins>10?'10분 밖':'도보 '+j.mins+'분')+'</span></button>';
+    }).join('');
+    qa('#mcPins .mc-pin').forEach(function(b){
+      b.onclick=function(){ state.sel=b.getAttribute('data-j'); renderMap(); renderMcInfo(); };
+    });
+  }
+  function renderMcInfo(){
+    var el=q('#mcInfo'); if(!el) return;
+    var j=state.sel?jobById(state.sel):null;
+    if(!j){ el.innerHTML='핀을 누르면 그 자리 조건이 여기 나옵니다. 도보 10분이 넘는 곳은 흐리게 표시됩니다.'; return; }
+    el.innerHTML='<b>'+j.shop+'</b> · '+j.role+'<br>도보 '+j.mins+'분 · '+j.time+' · 시급 '+j.pay+
+      (j.today?' · <b style="color:#FFB27A">오늘 당일지급</b>':'')+
+      '<button type="button" class="go" data-apply="'+j.id+'">이 자리로 지원하기 (문구 복사)</button>';
+    var b=q('[data-apply]',el); if(b) b.onclick=function(){ applyJob(j.id); };
+  }
+
+  /* ============================ 2. 사장님 선제안 ============================ */
+  var OFF_KEY='ba_offers';
+  function offers(){
+    var v=LS.get(OFF_KEY,null);
+    if(!Array.isArray(v)){
+      v=[{id:'o1',shop:'미사 숙성삼겹 명가',pay:'13,500원',time:'오늘 18:00~21:00',
+          msg:'지난번 홀서빙 잘 하셔서 먼저 연락드립니다. 시급 올려 드릴게요.',at:new Date().toISOString()}];
+      LS.set(OFF_KEY,v);
+    }
+    return v;
+  }
+  function renderOffers(){
+    var list=q('#ofList'), n=q('#ofN'); if(!list) return;
+    var v=offers();
+    if(n) n.textContent=v.length+'건';
+    list.innerHTML = v.length ? v.map(function(o){
+      return '<div class="of"><div class="h">'+o.shop+'<span>먼저 제안</span></div>'+
+        '<p>'+o.msg+'<br><b style="color:#FFB27A">'+o.time+' · 시급 '+o.pay+'</b></p>'+
+        '<div class="r"><button type="button" class="ok" data-ok="'+o.id+'">수락</button>'+
+        '<button type="button" data-no="'+o.id+'">다음에</button></div></div>';
+    }).join('') : '<div class="sub" style="padding:6px 2px">받은 제안이 없습니다. 사장님이 먼저 보내면 여기에 바로 뜹니다.</div>';
+    qa('[data-ok]',list).forEach(function(b){ b.onclick=function(){
+      var id=b.getAttribute('data-ok'), vv=offers().filter(function(o){return o.id!==id;});
+      LS.set(OFF_KEY,vv); LS.set('ba_offers_ok',(LS.get('ba_offers_ok',[])||[]).concat([id]));
+      renderOffers(); say('수락했습니다 · 사장님께 바로 전달됩니다');
+    };});
+    qa('[data-no]',list).forEach(function(b){ b.onclick=function(){
+      var id=b.getAttribute('data-no');
+      LS.set(OFF_KEY,offers().filter(function(o){return o.id!==id;}));
+      renderOffers(); say('이번 제안은 넘겼습니다');
+    };});
+  }
+  window.openSendOffer=function(){
+    var m=q('#ofSend'); if(!m){
+      m=document.createElement('div'); m.id='ofSend'; m.className='ofModal';
+      m.innerHTML='<div class="bx"><b>사장님 선제안 보내기</b>'+
+        '<label>매장</label><input id="ofShop" value="미사 호프 3번가" maxlength="20">'+
+        '<label>시급</label><input id="ofPay" value="13,000원" maxlength="12">'+
+        '<label>시간</label><input id="ofTime" value="오늘 19:00~21:00" maxlength="24">'+
+        '<label>한마디</label><textarea id="ofMsg" maxlength="90">바쁜 시간대라 먼저 연락드립니다. 지난번처럼 부탁드려요.</textarea>'+
+        '<div class="r"><button type="button" class="go" id="ofGo">보내기</button>'+
+        '<button type="button" id="ofX">닫기</button></div></div>';
+      document.body.appendChild(m);
+      q('#ofX',m).onclick=function(){ m.classList.remove('on'); };
+      m.onclick=function(e){ if(e.target===m) m.classList.remove('on'); };
+      q('#ofGo',m).onclick=function(){
+        var o={id:'o'+Date.now(),shop:q('#ofShop',m).value.trim(),pay:q('#ofPay',m).value.trim(),
+               time:q('#ofTime',m).value.trim(),msg:q('#ofMsg',m).value.trim(),at:new Date().toISOString()};
+        if(!o.shop||!o.msg){ say('매장과 한마디를 채워 주세요'); return; }
+        LS.set(OFF_KEY,offers().concat([o]));
+        m.classList.remove('on'); renderOffers();
+        say('제안을 보냈습니다 · 알바생 화면 ' + '상단에 바로 뜹니다');
+      };
+    }
+    m.classList.add('on');
+  };
+
+  /* ============================ 3. 요일/당일지급 필터 + 찜 ============================ */
+  function renderDays(){
+    var box=q('#jbDays'); if(!box) return;
+    var arr=[{v:'all',t:'요일 전체'}].concat(DOW.map(function(d){ return {v:d,t:d}; }));
+    box.innerHTML=arr.map(function(o){
+      return '<button type="button" class="'+(state.day===o.v?'on':'')+'" data-d="'+o.v+'">'+o.t+'</button>';
+    }).join('');
+    qa('button',box).forEach(function(b){
+      b.onclick=function(){ state.day=b.getAttribute('data-d'); renderDays(); renderJobs(); };
+    });
+  }
+  function filtered(){
+    return JOBS.filter(function(j){
+      if(state.day!=='all' && j.days.indexOf(state.day)<0) return false;
+      if(state.today && !j.today) return false;
+      if(state.favOnly && favs.indexOf(j.id)<0) return false;
+      return true;
+    });
+  }
+  function renderJobs(){
+    var box=q('#jbList'), n=q('#jbN'); if(!box) return;
+    var list=filtered();
+    if(n) n.textContent=list.length+'곳';
+    box.innerHTML = list.length ? list.map(function(j){
+      var on=favs.indexOf(j.id)>=0;
+      return '<div class="jb"><div class="t"><div style="min-width:0">'+
+        '<b>'+j.shop+'</b><div class="s">'+j.role+' · 도보 '+j.mins+'분</div></div>'+
+        '<button type="button" class="fav'+(on?' on':'')+'" data-fav="'+j.id+'" aria-label="찜">'+(on?'♥':'♡')+'</button></div>'+
+        '<div class="m"><span class="pay">시급 '+j.pay+'</span>'+(j.today?'<span class="td">당일지급</span>':'')+
+        '<span>'+j.time+'</span><span>'+j.days.join('·')+'</span><span>'+j.spots+'명</span></div>'+
+        '<button type="button" class="btn2" data-apply2="'+j.id+'">지원 문구 만들어 복사</button></div>';
+    }).join('') : '<div class="sub" style="padding:6px 2px">조건에 맞는 자리가 없습니다. 요일이나 당일지급 필터를 풀어 보세요.</div>';
+    qa('[data-fav]',box).forEach(function(b){ b.onclick=function(){
+      var id=b.getAttribute('data-fav'), i=favs.indexOf(id);
+      if(i>=0) favs.splice(i,1); else favs.push(id);
+      LS.set('ba_fav',favs); renderJobs();
+      say(i>=0?'찜을 풀었습니다':'찜했습니다 · [찜만 보기]로 모아 볼 수 있습니다');
+    };});
+    qa('[data-apply2]',box).forEach(function(b){ b.onclick=function(){ applyJob(b.getAttribute('data-apply2')); };});
+  }
+  qa('#jbTog button').forEach(function(b){
+    b.onclick=function(){
+      var t=b.getAttribute('data-t');
+      if(t==='today'){ state.today=!state.today; b.classList.toggle('on',state.today); }
+      if(t==='fav'){ state.favOnly=!state.favOnly; b.classList.toggle('on',state.favOnly); }
+      renderJobs();
+    };
+  });
+
+  /* ============================ 4. 1분 이력서 ============================ */
+  var RES_KEY='ba_resume';
+  function resumeText(r){
+    return '[1분 이력서] '+r.name+' / '+r.age+'\n'+
+      '경력: '+r.exp+'\n'+
+      '가능: '+((r.days&&r.days.length?r.days.join('·'):'요일 협의')+' / '+r.time)+'\n'+
+      '한 줄: '+r.line+'\n'+
+      '연락: 이 앱 문자로 주세요';
+  }
+  function renderResume(){
+    var r=LS.get(RES_KEY,null);
+    var prev=q('#rsPrev'), n=q('#rsN');
+    if(r){
+      if(n) n.textContent='저장됨';
+      if(prev){ prev.hidden=false; prev.textContent=r.text; }
+      if(q('#rsName')) q('#rsName').value=r.name||'';
+      if(q('#rsAge')) q('#rsAge').value=r.age||'40대';
+      if(q('#rsExp')) q('#rsExp').value=r.exp||'1~3년';
+      if(q('#rsTime')) q('#rsTime').value=r.time||'저녁';
+      if(q('#rsLine')) q('#rsLine').value=r.line||'';
+    } else {
+      if(n) n.textContent='작성 전';
+      if(prev){ prev.hidden=true; prev.textContent=''; }
+    }
+    var days=(r&&r.days)||['금','토'];
+    renderDayPick(days);
+  }
+  function renderDayPick(sel){
+    var box=q('#rsDays'); if(!box) return;
+    box.innerHTML=DOW.map(function(d){
+      return '<button type="button" class="'+(sel.indexOf(d)>=0?'on':'')+'" data-rd="'+d+'">'+d+'</button>';
+    }).join('');
+    qa('button',box).forEach(function(b){
+      b.onclick=function(){ b.classList.toggle('on'); };
+    });
+  }
+  function pickedDays(){
+    return qa('#rsDays button.on').map(function(b){ return b.getAttribute('data-rd'); });
+  }
+  function saveResume(){
+    var name=(q('#rsName').value||'').trim();
+    var line=(q('#rsLine').value||'').trim();
+    if(!name){ say('이름(가명도 됩니다)을 넣어 주세요'); q('#rsName').focus(); return null; }
+    if(!line){ say('한 줄 소개를 넣어 주세요'); q('#rsLine').focus(); return null; }
+    var r={name:name,age:q('#rsAge').value,exp:q('#rsExp').value,time:q('#rsTime').value,
+           days:pickedDays(),line:line,at:new Date().toISOString()};
+    r.text=resumeText(r);
+    LS.set(RES_KEY,r); renderResume();
+    say('이력서를 저장했습니다 · 지원할 때 함께 붙습니다');
+    return r;
+  }
+  q('#rsSave').onclick=function(){ saveResume(); };
+  q('#rsCopy').onclick=function(){
+    var r=LS.get(RES_KEY,null) || saveResume();
+    if(r) copy(r.text,'이력서를 복사했습니다');
+  };
+  function applyJob(id){
+    var j=jobById(id); if(!j) return;
+    var r=LS.get(RES_KEY,null);
+    var txt='[지원] '+j.shop+' · '+j.role+'\n시간: '+j.time+'\n시급: '+j.pay+'\n\n'+
+      (r?(r.text+'\n\n'):'')+'지금 바로 갈 수 있습니다. 연락 주세요.';
+    copy(txt,'지원 문구'+(r?' + 이력서':'')+'를 복사했습니다');
+  }
+
+  /* 시작 */
+  renderMap(); renderMcInfo(); renderOffers(); renderDays(); renderJobs(); renderResume();
 })();
 
 </script>
